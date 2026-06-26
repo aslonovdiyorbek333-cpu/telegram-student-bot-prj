@@ -1,4 +1,4 @@
-import os
+\import os
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
@@ -31,6 +31,9 @@ def send_problem_email(user_info, problem_text):
 
     msg['Subject'] = f"⚠️ BOT PROBLEM REPORT: User {user_info['user_id']}"
     
+    # Python 3.11 da f-string ichida backslash xato bermasligi uchun default qiymatni alohida olamiz
+    user_email_display = user_info.get('email') if user_info.get('email') else "Noma'lum"
+    
     body = f"""
     Yangi murojaat tushdi:
     
@@ -39,7 +42,7 @@ def send_problem_email(user_info, problem_text):
     - Ism-Familiya: {user_info['fullname']}
     - Telefon: {user_info['phone']}
     - Manzil/Lokatsiya: {user_info['location']}
-    - Email: {user_info.get('email', 'Noma\'lum')}
+    - Email: {user_email_display}
     - Tanlagan tili: {user_info['lang']}
     
     Murojaat / Muammo matni:
