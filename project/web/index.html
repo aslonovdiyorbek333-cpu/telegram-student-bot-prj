@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Assistant Web App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header>
+        <div>
+          <p class="badge">Student Assistant</p>
+          <h1>Study Help Hub</h1>
+          <p class="subtitle">
+            Search questions, browse exam guides, and access study resources.
+          </p>
+        </div>
+        <div class="toolbar">
+          <button id="btn-ielts">IELTS</button>
+          <button id="btn-sat">SAT</button>
+          <button id="btn-universities">Universities</button>
+          <button id="btn-resources">Resources</button>
+        </div>
+      </header>
+
+      <section class="search-panel">
+        <input
+          id="search-input"
+          type="search"
+          placeholder="Search questions or answers..."
+        />
+        <button id="btn-search">Search</button>
+      </section>
+
+      <main>
+        <aside class="sidebar">
+          <div class="card">
+            <h2>Section</h2>
+            <p id="section-title">Choose a section to view questions.</p>
+          </div>
+          <div class="card list-card">
+            <h2>Questions</h2>
+            <div id="question-list" class="list"></div>
+          </div>
+        </aside>
+
+        <section class="content">
+          <div class="card answer-card">
+            <h2 id="answer-title">Answer Preview</h2>
+            <div id="answer-body" class="answer-body">
+              Select a question to display its full answer here.
+            </div>
+          </div>
+          <div class="card info-card">
+            <h2>How to use</h2>
+            <p>Open the Telegram bot and use /web to jump to this web app.</p>
+            <p>
+              You can also browse section guidance, search with keywords, and
+              read simple study advice.
+            </p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
