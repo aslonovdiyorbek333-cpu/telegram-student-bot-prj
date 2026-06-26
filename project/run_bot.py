@@ -1,6 +1,9 @@
 import os
 import runpy
-import winreg
+try:
+    import winreg
+except ImportError:
+    winreg = None   
 
 key = winreg.OpenKey(winreg.HKEY_CURRENT_USER, r"Environment")
 try:
